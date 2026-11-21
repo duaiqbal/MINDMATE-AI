@@ -135,8 +135,10 @@ def respond(
         raw_reply = ""
         used_fallback = True
     else:
+        provenance["llm_model"] = gateway.model_name
         try:
             raw_reply = gateway.complete(prompt)
+            provenance["llm_model_used"] = gateway.last_model_used
         except LlmError:
             raw_reply = ""
             used_fallback = True

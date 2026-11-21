@@ -85,3 +85,11 @@ def make_user(pg_dsn):
         return uid
 
     return _make
+
+@pytest.fixture(autouse=True)
+def _no_real_llm(monkeypatch):
+    """Never call the real LLM from tests, even if backend/.env has a key.
+
+    An empty env var overrides the .env file; LlmSettings treats it as unset.
+    """
+    monkeypatch.setenv("OPENROUTER_API_KEY", "")

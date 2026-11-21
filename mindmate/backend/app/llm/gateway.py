@@ -49,6 +49,16 @@ class LlmGateway:
         self._provider = provider
         self._sleep = sleep
 
+    @property
+    def model_name(self) -> str:
+        """Configured model name (logged for reproducibility)."""
+        return self._config.model_name
+
+    @property
+    def last_model_used(self) -> str | None:
+        """Model that produced the last reply (may be a fallback), if known."""
+        return getattr(self._provider, "last_model", None)
+
     def complete(self, prompt: str) -> str:
         """Mask PII, then call the provider with retry/backoff.
 

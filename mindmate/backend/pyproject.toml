@@ -16,12 +16,12 @@ dependencies = [
     "pydantic==2.10.4",        # models + validation
     "pydantic-settings==2.7.0",# env-driven settings (Pydantic v2 split this out)
     "pyyaml==6.0.2",           # load the auditable reasoning decision table
+    "httpx==0.28.1",           # HTTP client for the LLM provider API (also TestClient transport)
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest==9.0.3",           # test runner (PYSEC-2026-1845 fix)
-    "httpx==0.28.1",           # TestClient transport for FastAPI
     "ruff==0.8.4",             # linter
     "sqlglot==26.0.1",         # parse/validate SQL migrations without a live DB
 ]
