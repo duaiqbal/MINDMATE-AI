@@ -20,13 +20,18 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install (editable + dev)
-        run: pip install -e ".[dev]" pip-audit
+        # The runner image ships an older setuptools that pip-audit flags
+        # (PYSEC-2026-3447, GHSA-xmj3-9gf7-h52w). Upgrade it to a fixed,
+        # pinned release before auditing the environment.
+        run: |
+          python -m pip install "setuptools==84.2.1"
+          python -m pip install -e ".[dev]" "pip-audit==2.10.1"
       - name: Lint (ruff)
         run: ruff check .
       - name: Tests (pytest)
         run: pytest -q
       - name: Dependency audit (pip-audit)
-        run: pip-audit
+        run: pip-audit --skip-editable
 
   frontend:
     name: Frontend (lint + tests + build + audit)
