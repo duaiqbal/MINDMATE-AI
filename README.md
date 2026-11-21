@@ -5,7 +5,7 @@ chat web app. Final Year Project, University of Haripur.
 
 > MindMate is a wellness support tool. It never diagnoses, never labels a user
 > with a condition, and never gives medication or treatment advice. See
-> `.kiro/steering/product.md` for the full product rules.
+> `.product.md` for the full product rules.
 
 ## Repository layout
 
