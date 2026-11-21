@@ -1,0 +1,36 @@
+# Everyday topics the user may mention. Used ONLY to notice what the user
+# themselves brought up alongside a feeling. Never used to assert a cause.
+# Human-editable. Markers are plain everyday words (en + roman_ur).
+version: "pattern-topics-0.1.0"
+
+topics:
+  work:
+    label: {en: work, roman_ur: kaam}
+    markers:
+      en: [work, job, boss, office, deadline, manager]
+      roman_ur: [kaam, naukri, boss, office, deadline]
+  study:
+    label: {en: studies, roman_ur: parhai}
+    markers:
+      en: [exam, exams, study, studies, assignment, grades, university]
+      roman_ur: [imtihan, exam, parhai, padhai, assignment, university]
+  family:
+    label: {en: family, roman_ur: family}
+    markers:
+      en: [family, parents, mom, dad, brother, sister]
+      roman_ur: [family, ammi, abbu, bhai, behan, walid]
+  friends:
+    label: {en: friends, roman_ur: doston}
+    markers:
+      en: [friend, friends, classmates]
+      roman_ur: [dost, doston, yaar]
+  sleep:
+    label: {en: sleep, roman_ur: neend}
+    markers:
+      en: [sleep, sleeping, cant sleep]
+      roman_ur: [neend, sona, raat]
+  money:
+    label: {en: money, roman_ur: paise}
+    markers:
+      en: [money, fees, rent, salary, bills]
+      roman_ur: [paisa, paise, fees, kiraya, tankhwah]

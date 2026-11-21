@@ -1,0 +1,49 @@
+# MindMate reasoning decision table.
+#
+# Strategy selection is DATA, not scattered if-statements. The reasoning engine
+# evaluates rules top-to-bottom and returns the first match. Keep this file
+# auditable and human-readable.
+#
+# Inputs available to a rule condition:
+#   crisis           : bool   - safety layer flagged a crisis (highest priority)
+#   confidence       : float  - calibrated emotion-classifier confidence [0,1]
+#   emotion          : str    - one of joy|sadness|fear_anxiety|anger|neutral
+#
+# Strategies (outputs):
+#   crisis_response  - fixed, pre-written safety response (LLM NOT called)
+#   clarify          - ask the user; never guess when unsure
+#   reflect          - hedged, question-form reflection with evidence
+#   support          - gentle supportive reflection (lower-arousal emotions)
+#
+# NOTE: thresholds live in config/thresholds.yaml and are tuned on the
+# validation split only (see tech.md evaluation rules).
+
+version: "reasoning-rules-0.1.0"
+
+rules:
+  # 1) Crisis always wins. The safety layer decides this; LLM is never called.
+  - name: crisis_overrides_everything
+    when:
+      crisis: true
+    strategy: crisis_response
+
+  # 2) Low confidence -> ask, do not guess.
+  - name: low_confidence_clarifies
+    when:
+      confidence_below: threshold.clarify
+    strategy: clarify
+
+  # 3) Confident negative/high-arousal emotions -> hedged reflection.
+  - name: confident_distress_reflects
+    when:
+      emotion_in: [sadness, fear_anxiety, anger]
+    strategy: reflect
+
+  # 4) Confident joy/neutral -> gentle support.
+  - name: confident_positive_supports
+    when:
+      emotion_in: [joy, neutral]
+    strategy: support
+
+# Fallback if no rule matches (defensive; should not normally happen).
+default_strategy: clarify

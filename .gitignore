@@ -1,0 +1,52 @@
+# ---- Secrets / env ----
+.env
+.env.*
+!.env.example
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+build/
+dist/
+
+# ---- Node / frontend ----
+node_modules/
+mindmate/frontend/dist/
+mindmate/frontend/.vite/
+*.local
+
+# ---- ML artifacts ----
+mindmate/ml/export/*.onnx
+mindmate/ml/data/**/raw/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# ---- Supabase local ----
+mindmate/supabase/.branches/
+mindmate/supabase/.temp/
+
+# ---- Ephemeral test DB ----
+mindmate/backend/.pg_verify/
+mindmate/backend/.pg_test/
+
+# ---- TypeScript build cache ----
+*.tsbuildinfo
+
+# ---- Large dataset files (reproducible via ml/data scripts + checksums) ----
+mindmate/ml/data/processed/*.jsonl
+mindmate/ml/notebooks/emotion_training/*.jsonl
+
+# ---- Reference PDFs (copyrighted / personal; not published) ----
+/*.pdf

@@ -1,0 +1,15 @@
+{
+  "app": { "title": "MindMate", "tagline": "A space to reflect." },
+  "nav": { "chat": "Chat", "mood": "Mood", "dashboard": "Dashboard", "memory": "Memory", "settings": "Settings" },
+  "consent": {
+    "title": "Before we begin",
+    "body": "MindMate is a wellness companion, not a clinician. It never diagnoses or gives medical advice. You can export or delete your data anytime.",
+    "agree": "I understand and agree",
+    "required": "Please agree to continue."
+  },
+  "chat": { "title": "Chat", "placeholder": "How are you feeling?", "send": "Send", "disclaimer": "Reflections are offered as questions, and you can always say they're wrong.", "error": "I could not reach MindMate right now. Please try again in a moment." },
+  "mood": { "title": "Mood", "prompt": "How is your mood right now?", "logged": "Mood logged", "log": "Log mood" },
+  "dashboard": { "title": "Dashboard", "trend": "Your mood trend", "empty": "No mood entries yet." },
+  "memory": { "title": "Memory", "empty": "Nothing saved yet.", "delete": "Delete" },
+  "settings": { "title": "Settings", "language": "Language", "export": "Export my data", "deleteAccount": "Delete my account" }
+}

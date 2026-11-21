@@ -1,0 +1,29 @@
+# Label maps: source dataset labels -> MindMate core labels.
+# Human-reviewable. A label mapped to null is DROPPED (not forced into a core
+# label that does not fit). After any change, re-run prepare_datasets.py and
+# re-freeze the test split.
+version: "label-maps-0.1.0"
+
+goemotions:
+  # Official GoEmotions Ekman grouping (ekman_mapping.json) -> core labels.
+  # NOTE: the official "joy" group also holds approval, admiration, caring,
+  # desire, pride. A reviewer may want to tighten this.
+  ekman_to_core:
+    anger: anger
+    fear: fear_anxiety
+    joy: joy
+    sadness: sadness
+    neutral: neutral
+    disgust: null
+    surprise: null
+
+ruemocorp:
+  label_to_core:
+    anger: anger
+    fear: fear_anxiety
+    happy: joy
+    sad: sadness
+    none: neutral      # label actually used in the CSV
+    neutral: neutral   # name used in the dataset card
+    disgust: null
+    surprise: null

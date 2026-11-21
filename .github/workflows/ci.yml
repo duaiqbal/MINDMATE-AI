@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    name: Backend (lint + tests + audit)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mindmate/backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install (editable + dev)
+        run: pip install -e ".[dev]" pip-audit
+      - name: Lint (ruff)
+        run: ruff check .
+      - name: Tests (pytest)
+        run: pytest -q
+      - name: Dependency audit (pip-audit)
+        run: pip-audit
+
+  frontend:
+    name: Frontend (lint + tests + build + audit)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mindmate/frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install
+        run: npm ci
+      - name: Lint (eslint)
+        run: npm run lint
+      - name: Tests (vitest)
+        run: npm run test
+      - name: Build
+        run: npm run build
+      - name: Dependency audit (npm audit)
+        run: npm audit --audit-level=high
+
+  secret-scan:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "false"

@@ -1,0 +1,6 @@
+# Thresholds for the reasoning/uncertainty gate.
+# Tuned on the VALIDATION split only. Logged with every analysis.
+version: "thresholds-0.1.0"
+
+# Below this calibrated confidence, route to the "clarify" strategy.
+clarify: 0.55

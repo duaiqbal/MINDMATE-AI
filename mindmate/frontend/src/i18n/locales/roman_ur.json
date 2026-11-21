@@ -1,0 +1,15 @@
+{
+  "app": { "title": "MindMate", "tagline": "Sochne ke liye aik jagah." },
+  "nav": { "chat": "Baat cheet", "mood": "Mood", "dashboard": "Dashboard", "memory": "Yaaddasht", "settings": "Settings" },
+  "consent": {
+    "title": "Shuru karne se pehle",
+    "body": "MindMate aik wellness saathi hai, doctor nahi. Ye kabhi diagnosis ya dawai ka mashwara nahi deta. Aap apna data kabhi bhi export ya delete kar sakte hain.",
+    "agree": "Main samajhta/samajhti hoon aur raazi hoon",
+    "required": "Jari rakhne ke liye raazi hona zaroori hai."
+  },
+  "chat": { "title": "Baat cheet", "placeholder": "Aap kaisa mehsoos kar rahe hain?", "send": "Bhejein", "disclaimer": "Baatein sawal ke taur par di jaati hain, aap kabhi bhi keh sakte hain ke wo ghalat hain.", "error": "Abhi MindMate se rabta nahi ho saka. Thori der baad dobara koshish karein." },
+  "mood": { "title": "Mood", "prompt": "Is waqt aap ka mood kaisa hai?", "logged": "Mood save ho gaya", "log": "Mood save karein" },
+  "dashboard": { "title": "Dashboard", "trend": "Aap ka mood trend", "empty": "Abhi koi mood entry nahi." },
+  "memory": { "title": "Yaaddasht", "empty": "Abhi kuch save nahi.", "delete": "Delete" },
+  "settings": { "title": "Settings", "language": "Zaban", "export": "Mera data export karein", "deleteAccount": "Mera account delete karein" }
+}

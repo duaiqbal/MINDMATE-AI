@@ -1,0 +1,76 @@
+{
+  "label_maps_version": "label-maps-0.1.0",
+  "en": {
+    "source": "goemotions",
+    "processing": {
+      "excluded_dropped_label": 7646,
+      "excluded_conflicting_labels": 2588,
+      "kept": 44029
+    },
+    "per_split_label_counts": {
+      "train": {
+        "neutral": 12823,
+        "anger": 4293,
+        "fear_anxiety": 541,
+        "joy": 15216,
+        "sadness": 2326
+      },
+      "val": {
+        "neutral": 1592,
+        "sadness": 266,
+        "joy": 1941,
+        "anger": 555,
+        "fear_anxiety": 72
+      },
+      "test": {
+        "sadness": 283,
+        "joy": 1863,
+        "neutral": 1606,
+        "anger": 572,
+        "fear_anxiety": 80
+      }
+    },
+    "sha256_all": "972992b1dce78d160f5d5985a6c3c299ab5d3fae8d2a028c1401b6b8d28819fc",
+    "sha256_test_frozen": "74ddacdd5a556da270772c65ac55b71a64efeed66f1a86c286f59978d04bd053"
+  },
+  "roman_ur": {
+    "source": "ruemocorp",
+    "processing": {
+      "source_label_none": 4000,
+      "source_label_sad": 4000,
+      "source_label_anger": 4002,
+      "source_label_happy": 4000,
+      "source_label_fear": 4000,
+      "source_label_surprise": 4000,
+      "excluded_dropped_label": 8000,
+      "source_label_disgust": 4000,
+      "excluded_duplicate": 427,
+      "kept": 19575
+    },
+    "per_split_label_counts": {
+      "train": {
+        "neutral": 3183,
+        "sadness": 3198,
+        "anger": 3201,
+        "joy": 3105,
+        "fear_anxiety": 2994
+      },
+      "val": {
+        "neutral": 383,
+        "anger": 399,
+        "joy": 405,
+        "fear_anxiety": 371,
+        "sadness": 383
+      },
+      "test": {
+        "sadness": 397,
+        "fear_anxiety": 365,
+        "joy": 400,
+        "anger": 400,
+        "neutral": 391
+      }
+    },
+    "sha256_all": "12323f1fa6c78e52e03821e9203987765b87d54b064c0e68882202ea9f6132ce",
+    "sha256_test_frozen": "ba6e5fbae3be6bb3d293afcfeaa476adb900aa5ef7871223acae0cc327969eeb"
+  }
+}

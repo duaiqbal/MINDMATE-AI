@@ -1,0 +1,82 @@
+# Two-tier emotion taxonomy for self-discovery.
+#
+# Tier 1 (core): the 5 labels the MODEL predicts (reliable, few buckets).
+# Tier 2 (nuances): finer feelings surfaced by a RULE-BASED tagger using the
+#   markers below. Nuances help the user reflect ("maybe this is loneliness?")
+#   but are ALWAYS offered as gentle possibilities, never facts or diagnoses.
+#
+# Markers are everyday words (en + roman_ur), lowercase. NOT invented clinical
+# content; a human reviewer can edit/extend. A nuance is a FEELING, not a
+# condition label and not a crisis signal (crisis = the safety layer).
+
+version: "emotion-taxonomy-0.1.0"
+
+core:
+  joy:
+    nuances:
+      gratitude:
+        en: [grateful, thankful, blessed, appreciate]
+        roman_ur: [shukar, shukarguzar, mashkoor, ehsaanmand]
+      hope:
+        en: [hopeful, optimistic, looking forward]
+        roman_ur: [umeed, pur-umeed, aas]
+      relief:
+        en: [relieved, finally, at ease, lighter]
+        roman_ur: [sukoon, aaram, halka]
+      contentment:
+        en: [content, peaceful, satisfied]
+        roman_ur: [mutmain, raazi, chain]
+
+  sadness:
+    nuances:
+      loneliness:
+        en: [lonely, alone, isolated, by myself]
+        roman_ur: [tanha, akela, akeli]
+      grief:
+        en: [loss, miss them, passed away, grieving]
+        roman_ur: [khoya, yaad aati, maatam]
+      disappointment:
+        en: [disappointed, let down, failed]
+        roman_ur: [mayoos, nakami, dukhi]
+      hopelessness:
+        en: [hopeless, no point, nothing matters]
+        roman_ur: [na-umeed, koi faida nahi, bekaar]
+
+  fear_anxiety:
+    nuances:
+      worry:
+        en: [worried, anxious, nervous]
+        roman_ur: [fikr, pareshan, ghabrahat]
+      panic:
+        en: [panic, racing heart, cant breathe]
+        roman_ur: [ghabra, dil tez, saans]
+      overwhelm:
+        en: [overwhelmed, too much, cant cope]
+        roman_ur: [zyada ho gaya, sambhal nahi, bojh]
+      social_anxiety:
+        en: [judged, embarrassed, awkward]
+        roman_ur: [sharminda, log kya kahenge, jhijak]
+
+  anger:
+    nuances:
+      frustration:
+        en: [frustrated, stuck, annoyed]
+        roman_ur: [jhunjhlahat, tang, pareshan kun]
+      resentment:
+        en: [resent, unfair, held back]
+        roman_ur: [naraazgi, na-insafi, gila]
+      irritation:
+        en: [irritated, bothered, snapped]
+        roman_ur: [chirh, gussa aya, bura laga]
+
+  neutral:
+    nuances:
+      calm:
+        en: [fine, okay, normal]
+        roman_ur: [theek, aam, normal]
+      tired:
+        en: [tired, drained, exhausted]
+        roman_ur: [thaka, nidhaal, sust]
+      mixed:
+        en: [not sure, confused, mixed]
+        roman_ur: [samajh nahi, uljhan, pata nahi]
